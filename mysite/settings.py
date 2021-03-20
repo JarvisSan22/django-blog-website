@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
-import os 
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -63,7 +63,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                 'django.template.context_processors.static', #ここ追加
+                'django.template.context_processors.static',  # ここ追加
             ],
         },
     },
@@ -79,7 +79,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-       # 'NAME': BASE_DIR / 'db.sqlite3',
+        # 'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -123,5 +123,11 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-ALLOWED_HOSTS = ['127.0.0.1','[::1]']
+ALLOWED_HOSTS = ['127.0.0.1', '[::1]']
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
+
+
+#MEDIA_URL = "/media/"
+# if not os.path.exists("/media/"):
+#  os.makedirs("/mdeia/")
+#MEDIA_ROOT = os.path.join(BASE_DIR, "media")
